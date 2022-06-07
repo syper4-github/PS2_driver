@@ -1,0 +1,52 @@
+
+State Machine - |ps_2_driver|currentstate
+Name currentstate.1011 currentstate.1010 currentstate.1001 currentstate.1000 currentstate.0111 currentstate.0110 currentstate.0101 currentstate.0100 currentstate.0011 currentstate.0010 currentstate.0001 currentstate.reset 
+currentstate.reset 0 0 0 0 0 0 0 0 0 0 0 0 
+currentstate.0001 0 0 0 0 0 0 0 0 0 0 1 1 
+currentstate.0010 0 0 0 0 0 0 0 0 0 1 0 1 
+currentstate.0011 0 0 0 0 0 0 0 0 1 0 0 1 
+currentstate.0100 0 0 0 0 0 0 0 1 0 0 0 1 
+currentstate.0101 0 0 0 0 0 0 1 0 0 0 0 1 
+currentstate.0110 0 0 0 0 0 1 0 0 0 0 0 1 
+currentstate.0111 0 0 0 0 1 0 0 0 0 0 0 1 
+currentstate.1000 0 0 0 1 0 0 0 0 0 0 0 1 
+currentstate.1001 0 0 1 0 0 0 0 0 0 0 0 1 
+currentstate.1010 0 1 0 0 0 0 0 0 0 0 0 1 
+currentstate.1011 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ps_2_driver|memory_currentstate
+Name memory_currentstate.0011 memory_currentstate.0010 memory_currentstate.0001 memory_currentstate.0100 
+memory_currentstate.0001 0 0 0 0 
+memory_currentstate.0010 0 1 1 0 
+memory_currentstate.0011 1 0 1 0 
+memory_currentstate.0100 0 0 1 1 
+
+State Machine - |ps_2_driver|impulsestate
+Name impulsestate.1011 impulsestate.1010 impulsestate.1001 impulsestate.1000 impulsestate.0111 impulsestate.0110 impulsestate.0101 impulsestate.0100 impulsestate.0011 impulsestate.0010 impulsestate.0001 impulsestate.reset 
+impulsestate.reset 0 0 0 0 0 0 0 0 0 0 0 0 
+impulsestate.0001 0 0 0 0 0 0 0 0 0 0 1 1 
+impulsestate.0010 0 0 0 0 0 0 0 0 0 1 0 1 
+impulsestate.0011 0 0 0 0 0 0 0 0 1 0 0 1 
+impulsestate.0100 0 0 0 0 0 0 0 1 0 0 0 1 
+impulsestate.0101 0 0 0 0 0 0 1 0 0 0 0 1 
+impulsestate.0110 0 0 0 0 0 1 0 0 0 0 0 1 
+impulsestate.0111 0 0 0 0 1 0 0 0 0 0 0 1 
+impulsestate.1000 0 0 0 1 0 0 0 0 0 0 0 1 
+impulsestate.1001 0 0 1 0 0 0 0 0 0 0 0 1 
+impulsestate.1010 0 1 0 0 0 0 0 0 0 0 0 1 
+impulsestate.1011 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ps_2_driver|outputstate
+Name outputstate.1011 outputstate.1010 outputstate.1001 outputstate.1000 outputstate.0111 outputstate.0110 outputstate.0101 outputstate.0100 outputstate.0011 outputstate.0010 outputstate.0001 outputstate.reset 
+outputstate.reset 0 0 0 0 0 0 0 0 0 0 0 0 
+outputstate.0001 0 0 0 0 0 0 0 0 0 0 1 1 
+outputstate.0010 0 0 0 0 0 0 0 0 0 1 0 1 
+outputstate.0011 0 0 0 0 0 0 0 0 1 0 0 1 
+outputstate.0100 0 0 0 0 0 0 0 1 0 0 0 1 
+outputstate.0101 0 0 0 0 0 0 1 0 0 0 0 1 
+outputstate.0110 0 0 0 0 0 1 0 0 0 0 0 1 
+outputstate.0111 0 0 0 0 1 0 0 0 0 0 0 1 
+outputstate.1000 0 0 0 1 0 0 0 0 0 0 0 1 
+outputstate.1001 0 0 1 0 0 0 0 0 0 0 0 1 
+outputstate.1010 0 1 0 0 0 0 0 0 0 0 0 1 
+outputstate.1011 1 0 0 0 0 0 0 0 0 0 0 1 

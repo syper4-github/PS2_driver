@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -4.586
+TNS   : -69.688
+
+Type  : Slow Model Setup 'impulse80us'
+Slack : -2.958
+TNS   : -33.412
+
+Type  : Slow Model Setup 'PS2_CLK'
+Slack : -2.755
+TNS   : -66.230
+
+Type  : Slow Model Setup 'write_memory'
+Slack : -2.110
+TNS   : -64.584
+
+Type  : Slow Model Hold 'PS2_CLK'
+Slack : -3.382
+TNS   : -3.382
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.698
+TNS   : -2.698
+
+Type  : Slow Model Hold 'impulse80us'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Hold 'write_memory'
+Slack : 0.783
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'PS2_CLK'
+Slack : -2.333
+TNS   : -54.879
+
+Type  : Slow Model Minimum Pulse Width 'impulse80us'
+Slack : -2.333
+TNS   : -16.997
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.631
+TNS   : -32.181
+
+Type  : Slow Model Minimum Pulse Width 'write_memory'
+Slack : -0.611
+TNS   : -43.992
+
+Type  : Fast Model Setup 'impulse80us'
+Slack : -1.468
+TNS   : -10.947
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -1.039
+TNS   : -12.040
+
+Type  : Fast Model Setup 'PS2_CLK'
+Slack : -0.639
+TNS   : -13.499
+
+Type  : Fast Model Setup 'write_memory'
+Slack : -0.352
+TNS   : -8.717
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.726
+TNS   : -1.726
+
+Type  : Fast Model Hold 'PS2_CLK'
+Slack : -1.660
+TNS   : -1.660
+
+Type  : Fast Model Hold 'impulse80us'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'write_memory'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'PS2_CLK'
+Slack : -1.777
+TNS   : -44.777
+
+Type  : Fast Model Minimum Pulse Width 'impulse80us'
+Slack : -1.777
+TNS   : -13.777
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -26.380
+
+Type  : Fast Model Minimum Pulse Width 'write_memory'
+Slack : -0.500
+TNS   : -36.000
+
+------------------------------------------------------------
