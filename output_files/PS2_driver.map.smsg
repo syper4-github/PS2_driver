@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at ps_2_driver.v(249): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at ps_2_driver.v(242): always construct contains both blocking and non-blocking assignments

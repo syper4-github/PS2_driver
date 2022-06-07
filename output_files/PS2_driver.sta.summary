@@ -3,35 +3,35 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -4.586
-TNS   : -69.688
+Slack : -4.714
+TNS   : -74.291
 
 Type  : Slow Model Setup 'impulse80us'
-Slack : -2.958
-TNS   : -33.412
-
-Type  : Slow Model Setup 'PS2_CLK'
-Slack : -2.755
-TNS   : -66.230
+Slack : -3.540
+TNS   : -38.993
 
 Type  : Slow Model Setup 'write_memory'
-Slack : -2.110
-TNS   : -64.584
+Slack : -3.516
+TNS   : -115.436
+
+Type  : Slow Model Setup 'PS2_CLK'
+Slack : -2.654
+TNS   : -69.002
 
 Type  : Slow Model Hold 'PS2_CLK'
-Slack : -3.382
-TNS   : -3.382
+Slack : -3.071
+TNS   : -3.071
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : -2.698
-TNS   : -2.698
+Slack : -2.688
+TNS   : -2.688
 
 Type  : Slow Model Hold 'impulse80us'
 Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'write_memory'
-Slack : 0.783
+Slack : 0.861
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'PS2_CLK'
@@ -51,35 +51,35 @@ Slack : -0.611
 TNS   : -43.992
 
 Type  : Fast Model Setup 'impulse80us'
-Slack : -1.468
-TNS   : -10.947
+Slack : -1.659
+TNS   : -13.768
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -1.039
-TNS   : -12.040
-
-Type  : Fast Model Setup 'PS2_CLK'
-Slack : -0.639
-TNS   : -13.499
+Slack : -1.191
+TNS   : -14.800
 
 Type  : Fast Model Setup 'write_memory'
-Slack : -0.352
-TNS   : -8.717
+Slack : -0.858
+TNS   : -26.563
+
+Type  : Fast Model Setup 'PS2_CLK'
+Slack : -0.773
+TNS   : -13.910
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : -1.726
-TNS   : -1.726
+Slack : -1.717
+TNS   : -1.717
 
 Type  : Fast Model Hold 'PS2_CLK'
-Slack : -1.660
-TNS   : -1.660
+Slack : -1.473
+TNS   : -1.473
 
 Type  : Fast Model Hold 'impulse80us'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'write_memory'
-Slack : 0.293
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'PS2_CLK'

@@ -65,7 +65,6 @@ reg write_memory = 1'b0;
 
 reg [3:0] outputstate = reset;
 reg [3:0] impulsestate = reset;
-reg combitnation_success = 1'b0;
 
 always @(posedge CLOCK_50) begin
 	counter <= counter + 1'b1;
@@ -159,27 +158,23 @@ end
 always @(posedge CLOCK_50) begin
 	case(memory_currentstate)
 		memory_state1: begin
-								if((code_memory[2] == 8'b00010010) & (code_memory[3] == 8'b00110100)) begin
+								if(((code_memory[2] == 8'b00010010) | (code_memory[2] == 8'b00110100)) & ((code_memory[3] == 8'b00010010) | (code_memory[3] == 8'b00110100))) begin
 									number_of_zeros <= 4'b1000 - ((datkey[7])*4'b0001 + (datkey[6])*4'b0001 + (datkey[5])*4'b0001 + (datkey[4])*4'b0001 + (datkey[3])*4'b0001 + (datkey[2])*4'b0001 + (datkey[1])*4'b0001 + (datkey[0])*4'b0001);
-									combitnation_success <= 1'b1;
 								end
 							end
 		memory_state2: begin
-								if((code_memory[3] == 8'b00010010) & (code_memory[0] == 8'b00110100)) begin
+								if(((code_memory[3] == 8'b00010010) | (code_memory[3] == 8'b00110100)) & ((code_memory[0] == 8'b00010010) | (code_memory[0] == 8'b00110100))) begin
 									number_of_zeros <= 4'b1000 - ((datkey[7])*4'b0001 + (datkey[6])*4'b0001 + (datkey[5])*4'b0001 + (datkey[4])*4'b0001 + (datkey[3])*4'b0001 + (datkey[2])*4'b0001 + (datkey[1])*4'b0001 + (datkey[0])*4'b0001);
-									combitnation_success <= 1'b1;
 								end
 							end
 		memory_state3: begin
-								if((code_memory[0] == 8'b00010010) & (code_memory[1] == 8'b00110100)) begin
+								if(((code_memory[0] == 8'b00010010) | (code_memory[0] == 8'b00110100)) & ((code_memory[1] == 8'b00010010) | (code_memory[1] == 8'b00110100))) begin
 									number_of_zeros <= 4'b1000 - ((datkey[7])*4'b0001 + (datkey[6])*4'b0001 + (datkey[5])*4'b0001 + (datkey[4])*4'b0001 + (datkey[3])*4'b0001 + (datkey[2])*4'b0001 + (datkey[1])*4'b0001 + (datkey[0])*4'b0001);
-									combitnation_success <= 1'b1;
 								end
 							end
 		memory_state4: begin
-								if((code_memory[1] == 8'b00010010) & (code_memory[2] == 8'b00110100)) begin
+								if(((code_memory[1] == 8'b00010010) | (code_memory[1] == 8'b00110100)) & ((code_memory[2] == 8'b00010010) | (code_memory[2] == 8'b00110100))) begin
 									number_of_zeros <= 4'b1000 - ((datkey[7])*4'b0001 + (datkey[6])*4'b0001 + (datkey[5])*4'b0001 + (datkey[4])*4'b0001 + (datkey[3])*4'b0001 + (datkey[2])*4'b0001 + (datkey[1])*4'b0001 + (datkey[0])*4'b0001);
-									combitnation_success <= 1'b1;
 								end
 							end
 	endcase
@@ -190,22 +185,42 @@ always @(posedge CLOCK_50) begin
 		memory_state1: begin
 								if((code_memory[3] != 8'b00010010) & (code_memory[3] != 8'b00110100)) begin
 									datkey <= code_memory[3];
-								end
+								end else begin
+										if(code_memory[1] == code_memory[3])
+											datkey <= code_memory[3];
+									end
+								if(code_memory[3] == 8'b11110000)
+									datkey <= code_memory[2];
 							end
 		memory_state2: begin
 								if((code_memory[0] != 8'b00010010) & (code_memory[0] != 8'b00110100)) begin
 									datkey <= code_memory[0];
-								end
+								end else begin
+										if(code_memory[2] == code_memory[0])
+											datkey <= code_memory[0];
+									end
+								if(code_memory[0] == 8'b11110000)
+									datkey <= code_memory[3];
 							end
 		memory_state3: begin
 								if((code_memory[1] != 8'b00010010) & (code_memory[1] != 8'b00110100)) begin
 									datkey <= code_memory[1];
-								end
+								end else begin
+										if(code_memory[3] == code_memory[1])
+											datkey <= code_memory[1];
+									end
+								if(code_memory[1] == 8'b11110000)
+									datkey <= code_memory[0];
 							end
 		memory_state4: begin
 								if((code_memory[2] != 8'b00010010) & (code_memory[2] != 8'b00110100)) begin
 									datkey <= code_memory[2];
-								end
+								end else begin
+										if(code_memory[0] == code_memory[2])
+											datkey <= code_memory[2];
+									end
+								if(code_memory[2] == 8'b11110000)
+									datkey <= code_memory[1];
 							end
 	endcase
 end
@@ -213,28 +228,20 @@ end
 always @(posedge write_memory) begin
 	case(memory_currentstate)
 		memory_state1: begin
-								if(code_8_bit != 8'b11110000) begin
-									code_memory[0] <= code_8_bit;
-									memory_currentstate <= memory_state2;
-								end
+								code_memory[0] <= code_8_bit;
+								memory_currentstate <= memory_state2;
 							end
 		memory_state2: begin
-								if(code_8_bit != 8'b11110000) begin
-									code_memory[1] <= code_8_bit;
-									memory_currentstate <= memory_state3;
-								end
+								code_memory[1] <= code_8_bit;
+								memory_currentstate <= memory_state3;
 							end
 		memory_state3: begin
-								if(code_8_bit != 8'b11110000) begin
-									code_memory[2] <= code_8_bit;
-									memory_currentstate <= memory_state4;
-								end
+								code_memory[2] <= code_8_bit;
+								memory_currentstate <= memory_state4;
 							end
 		memory_state4: begin
-								if(code_8_bit != 8'b11110000) begin
-									code_memory[3] <= code_8_bit;
-									memory_currentstate <= memory_state1;
-								end
+								code_memory[3] <= code_8_bit;
+								memory_currentstate <= memory_state1;
 							end
 	endcase
 end
